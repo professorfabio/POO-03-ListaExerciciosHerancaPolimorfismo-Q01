@@ -10,9 +10,10 @@ public class Principal {
 		
 		String sn = JOptionPane.showInputDialog("Cadastrar Funcionario (S/N)? ");
         
+		sn = sn.toUpperCase();
         while(!sn.equals("N")) {
         	
-        	String tipo = JOptionPane.showInputDialog("Tipo do Funcionário (1-Gerente,2-Administrador,3-Comissionado,4-Horista:");
+        	String tipo = JOptionPane.showInputDialog("Tipo do Funcionário (1-Gerente,2-Administrador,3-Comissionado,4-Horista):");
         	String nome = JOptionPane.showInputDialog("Nome do Funcionário:");
         	String sobrenome = JOptionPane.showInputDialog("Sobrenome do Funcionário:");
         	double salario = 0;
@@ -42,13 +43,13 @@ public class Principal {
         	}
         	
         	sn = JOptionPane.showInputDialog("Cadastrar outro Funcionario (S/N)? ");
-        	
+        	sn = sn.toUpperCase();
         }
     
-        for(int i = 1; i < funcionarios.size() ;i++ ){
+        for(int i = 0; i < funcionarios.size() ;i++ ){
         	
             JOptionPane.showMessageDialog(null,  funcionarios.get(i).toString() + 
-            		"\n Total de Ganhos mensais: " + funcionarios.get(i).calculaGanho() );
+            		"\nTotal de Ganhos mensais: " + funcionarios.get(i).calculaGanho() );
            } 
       
 	}
